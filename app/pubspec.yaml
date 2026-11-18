@@ -1,0 +1,76 @@
+name: cek_daun_kopi
+description: "Deteksi penyakit daun kopi langsung di HP, tanpa internet."
+publish_to: 'none'
+
+version: 1.0.0+1
+
+environment:
+  sdk: ^3.14.0
+
+dependencies:
+  flutter:
+    sdk: flutter
+  material_ui: ^1.1.0
+
+  # Detection on the device.
+  flutter_onnxruntime: ^1.9.0
+  image: ^4.13.1
+
+  # Storage and the optional content refresh from the API.
+  http: ^1.6.0
+  path_provider: ^2.1.6
+
+  # Camera, gallery, sharing, reminders, the system settings page.
+  image_picker: ^1.2.4
+  share_plus: ^13.3.1
+  flutter_local_notifications: ^23.0.2
+  timezone: ^0.11.2
+  app_settings: ^9.0.1
+
+  # Outline icons (ISC licence).
+  lucide_icons_flutter: ^4.0.3
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^6.0.0
+  flutter_launcher_icons: ^0.14.4
+
+flutter:
+  uses-material-design: true
+
+  assets:
+    - assets/models/best.onnx
+    - assets/content/diseases.json
+    - assets/images/samples/
+
+  # Plus Jakarta Sans, SIL Open Font License 1.1 (assets/fonts/OFL.txt).
+  # Bundled so the app looks the same without a connection.
+  fonts:
+    - family: PlusJakartaSans
+      fonts:
+        - asset: assets/fonts/PlusJakartaSans-Regular.ttf
+          weight: 400
+        - asset: assets/fonts/PlusJakartaSans-Italic.ttf
+          weight: 400
+          style: italic
+        - asset: assets/fonts/PlusJakartaSans-Medium.ttf
+          weight: 500
+        - asset: assets/fonts/PlusJakartaSans-SemiBold.ttf
+          weight: 600
+        - asset: assets/fonts/PlusJakartaSans-Bold.ttf
+          weight: 700
+        - asset: assets/fonts/PlusJakartaSans-ExtraBold.ttf
+          weight: 800
+
+# Launcher icon, drawn from the app's own leaf glyph by
+# tool/render_app_icon_test.dart. Regenerate with:
+#   flutter test tool/render_app_icon_test.dart && dart run flutter_launcher_icons
+flutter_launcher_icons:
+  image_path: assets/branding/icon.png
+  android: true
+  adaptive_icon_background: "#0B7F3A"
+  adaptive_icon_foreground: assets/branding/icon_foreground.png
+  min_sdk_android: 24
+  ios: true
+  remove_alpha_ios: true
