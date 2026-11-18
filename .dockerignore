@@ -1,0 +1,11 @@
+# Build context of server/deploy/lite/Dockerfile is the repository root.
+# Send only what that image copies.
+*
+!LICENSE
+!server/app.py
+!server/coffee_leaf
+!server/templates
+!server/static
+!server/deploy/lite/requirements.txt
+!app/assets/models/best.onnx
+**/__pycache__

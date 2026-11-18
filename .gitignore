@@ -1,0 +1,5 @@
+.DS_Store
+.idea/
+.vscode/
+# Generated deploy folders (server/scripts/build_space.py)
+/build/
